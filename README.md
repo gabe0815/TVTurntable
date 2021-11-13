@@ -6,7 +6,6 @@ from your phone.
 
 ![TVturntable in action](./documentation/20211113_115309.gif)
 
-
 ## BOM
 * 3D printed turntable
 * motor spacer (3d printed)
@@ -17,6 +16,7 @@ from your phone.
 * stepper motor
 * closed loop GT2 timing belt, 200 mm, 7 mm wide
 * M3 bolt and hex nut
+* power supply (depending on your stepper driver)
 
 
 ## 3D printed parts
@@ -33,13 +33,21 @@ I've printed all parts in PLA with 20% infill, no supports, no rafts.
 
 ### Assembly
 ![Assembly of 3D printed parts](./documentation/assembly.gif)
+
+![Assembly](./documentation/IMG_20211113_121532.jpg)
+
+![Assembly](./documentation/IMG_20211113_121554.jpg)
+
+
 ## Electronics
-In addition to the printed parts you will need a microcntroller, a stepper driver and a stepper motor.
+In addition to the printed parts you will need a microcontroller, a stepper driver and a stepper motor.
 You can use any combination which is available to you or with which you have experience.
 
 My setup consists of a Wemos D1 mini (ESP8266 based controller),  flashed with TASMOTA.
-Convieniently, [TASMOTA](https://tasmota.github.io/docs/Commands/#stepper-motors) includes a driver for A4988 based stepper drivers. You can use any stepper driver which need the same input.
+Convieniently, [TASMOTA](https://tasmota.github.io/docs/Commands/#stepper-motors) includes a driver for A4988 based stepper drivers. You can use any stepper driver which needs the same input.
 I use an EasyDriver stepper driver based on (A3967). It requires three inputs: enable, direction and step.
+
+![Electronics](./documentation/IMG_20211113_121831.jpg)
 
 Then I use the standard TASMOTA commands over MQTT to turn the motor:
 ```bash
